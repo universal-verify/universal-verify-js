@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Verify SDK Smoke Test</title>
+</head>
+<body>
+    <h1>Universal Verify SDK Smoke Test</h1>
+    <div id="results"></div>
+
+    <script type="module">
+        const results = document.getElementById('results');
+        
+        async function testBuild(buildPath, buildName) {
+            try {
+                const module = await import(buildPath);
+                const sdk = new module.default('test-client-id');
+                
+                // Test basic functionality
+                const authUrl = sdk.createAuthorizationUrl({
+                    codeChallenge: 'test-challenge',
+                    redirectUrl: 'https://test.com/callback'
+                });
+                
+                // Test version
+                const version = sdk.constructor.version;
+                
+                results.innerHTML += `
+                    <div style="margin: 10px 0; padding: 10px; border: 1px solid #ccc;">
+                        <h3>${buildName}</h3>
+                        <p>✅ Loaded successfully</p>
+                        <p>✅ Version: ${version}</p>
+                        <p>✅ Authorization URL created: ${authUrl}</p>
+                    </div>
+                `;
+            } catch (error) {
+                results.innerHTML += `
+                    <div style="margin: 10px 0; padding: 10px; border: 1px solid red; color: red;">
+                        <h3>${buildName}</h3>
+                        <p>❌ Failed to load: ${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Test both builds
+        testBuild('../build/universal-verify.js', 'Unminified Build');
+        testBuild('../build/universal-verify.min.js', 'Minified Build');
+    </script>
+</body>
+</html> 

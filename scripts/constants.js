@@ -1,0 +1,1 @@
+export const AUTH_URL = 'https://universalverify.com/connect';

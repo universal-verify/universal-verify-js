@@ -1,0 +1,32 @@
+{
+  "name": "universal-verify-js",
+  "version": "0.0.1",
+  "description": "SDK for integrating with Universal Verify",
+  "main": "build/universal-verify.js",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c --bundleConfigAsCjs",
+    "test": "node --test",
+    "smoke": "npx http-server -p 8080 -c-1 & SERVER_PID=$! && sleep 1 && open http://localhost:8080/test/smoke.html && wait $SERVER_PID"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/universal-verify/universal-verify-js.git"
+  },
+  "keywords": [
+    "sdk"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/universal-verify/universal-verify-js/issues"
+  },
+  "homepage": "https://github.com/universal-verify/universal-verify-js#readme",
+  "dependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.32.1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
