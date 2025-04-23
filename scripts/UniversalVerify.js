@@ -39,8 +39,8 @@ class UniversalVerify {
         const params = {
             code: urlParams.get('code'),
             state: urlParams.get('state'),
-            //error: urlParams.get('error'),
-            //error_description: urlParams.get('error_description'),
+            error: urlParams.get('error'),
+            errorDescription: urlParams.get('error_description'),
         };
         
         return params;
