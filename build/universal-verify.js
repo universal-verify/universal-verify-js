@@ -39,8 +39,8 @@ class UniversalVerify {
         const params = {
             code: urlParams.get('code'),
             state: urlParams.get('state'),
-            //error: urlParams.get('error'),
-            //error_description: urlParams.get('error_description'),
+            error: urlParams.get('error'),
+            errorDescription: urlParams.get('error_description'),
         };
         
         return params;
@@ -50,7 +50,7 @@ class UniversalVerify {
      * Returns the version of the UniversalVerify library
      * @returns {string} The version of the UniversalVerify library
      */
-    static get version() { return '0.0.1'; }
+    static get version() { return '0.0.2'; }
 }
 
 export { UniversalVerify as default };

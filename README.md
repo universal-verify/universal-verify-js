@@ -27,7 +27,7 @@ You can also use the SDK directly from jsDelivr in your ES modules:
 
 ```javascript
 // In your module file (e.g., app.js)
-import UniversalVerify from 'https://cdn.jsdelivr.net/npm/universal-verify-js@0.0.1/build/universal-verify.min.js';
+import UniversalVerify from 'https://cdn.jsdelivr.net/npm/universal-verify-js@0.0.2/build/universal-verify.min.js';
 
 // Then use it as normal
 const universalVerify = new UniversalVerify('your-client-id');
@@ -109,7 +109,7 @@ Parses the OAuth redirect URL and extracts the authorization code and state para
 Returns the version of the UniversalVerify library.
 
 ```javascript
-console.log(UniversalVerify.version); // '0.0.1'
+console.log(UniversalVerify.version); // '0.0.2'
 ```
 
 ## Security Considerations

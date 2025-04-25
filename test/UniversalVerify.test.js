@@ -69,6 +69,6 @@ describe('UniversalVerify', () => {
     });
 
     test('version returns correct version', () => {
-        assert.strictEqual(UniversalVerify.version, '0.0.1');
+        assert.strictEqual(UniversalVerify.version, '0.0.2');
     });
 }); 
