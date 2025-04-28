@@ -54,7 +54,7 @@ const authUrl = universalVerify.createAuthorizationUrl({
 window.location.href = authUrl;
 
 // Parse the redirect URL when the user returns to your redirectUrl
-const params = universalVerify.parseRedirectUrl(window.location.href);
+const params = universalVerify.parseRedirectUrl();
 ```
 
 ## API Reference
